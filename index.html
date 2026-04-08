@@ -15,7 +15,7 @@
         />
         <div>
           <h1>Roman Kiselev</h1>
-          <p>Engineer • Data Scientist • Instrumentation • Rock Climber</p>
+          <p><span class="typewriter-text"></span></p>
         </div>
       </div>
     </header>
@@ -198,6 +198,23 @@
         .style("font-size", "0.75rem")
         .style("font-weight", 600)
         .attr("fill", "#333");
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      new Typed(".typewriter-text", {
+        strings: [
+          "Engineer &nbsp;",
+          "Data Scientist &nbsp;",
+          "Instrumentation Specialist &nbsp;",
+          "Rock Climber &nbsp;",
+          "Problem Solver &nbsp;",
+        ],
+        typeSpeed: 50,
+        backSpeed: 20,
+        backDelay: 2500,
+        loop: true,
+      });
     </script>
   </body>
 </html>
