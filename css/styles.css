@@ -1,24 +1,39 @@
 body {
-  padding: 25px;
+  padding: 0px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-main {
-  padding: 50px;
+  margin: 0px;
+  color: DarkSlateGray;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+header {
+  /*  background-color: rgb(223, 239, 249);*/
+  margin: 0px;
+  background-image: url("https://picsum.photos/id/37/1200/200?blur");
+  background-size: cover;
+  text-shadow: 1px 2px 6px lightgray;
+}
+
+main {
+  padding-left: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+  background-color: rgb(223, 239, 249);
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  height: auto;
+}
+
 h1 {
-  color: steelblue;
+  color: slategray;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 40px;
   margin: 0px;
 }
 
-p {
-  color: gray;
-  font-family: Arial, Helvetica, sans-serif;
-}
 .extrafancy {
   color: purple;
   font-family: cursive, sans-serif;
@@ -36,21 +51,31 @@ mark {
   color: black;
 }
 
-.card {
-  background-color: rgb(223, 239, 249);
-  padding: 20px;
+article {
+  background-color: rgb(242, 250, 255);
+  padding: 5px 20px;
   border-radius: 10px;
   border: 1px solid;
   border-color: lightblue;
-  width: 400px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  width: 80%;
+  box-shadow: 5px 5px 10px rgb(184, 190, 194);
+  margin: 20px 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  height: auto;
 }
 
 .avatar {
   display: block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 25%;
   border: 2px solid steelblue;
 }
 
@@ -58,5 +83,23 @@ mark {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin: 10px;
+  margin: 0px;
+  padding: 25px;
+}
+
+.social-logo {
+  height: 16px;
+  vertical-align: middle;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.navigation {
+  background-color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid slategray;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 5px;
 }
