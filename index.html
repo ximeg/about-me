@@ -92,12 +92,11 @@
 
         <article>
           <h3>📍 Where I lived</h3>
-          <ol>
-            <li>Tomsk, Russia</li>
-            <li>Jena, Germany</li>
-            <li>Memphis, USA</li>
-            <li><mark>San Francisco</mark>, USA (currently)</li>
-          </ol>
+          <div
+            id="years-chart"
+            class="chart-container"
+            aria-label="Bar chart showing years lived in each place"
+          ></div>
         </article>
       </section>
     </main>
@@ -122,5 +121,83 @@
         </a>
       </nav>
     </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+      const yearsLived = [
+        { name: "Leningrad, Russia", value: 2 },
+        { name: "Belarus", value: 2 },
+        { name: "Podgornoye, Russia", value: 12 },
+        { name: "Tomsk, Russia", value: 6 },
+        { name: "Jena, Germany", value: 9 },
+        { name: "Memphis, USA", value: 6 },
+        { name: "San Francisco, USA", value: 0.1 },
+      ];
+
+      const margin = { top: 30, right: 20, bottom: 40, left: 170 };
+      const width = 600;
+      const height = 280;
+
+      const svg = d3
+        .select("#years-chart")
+        .append("svg")
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .attr("role", "img")
+        .attr("aria-label", "Bar chart showing years lived in each location");
+
+      const x = d3
+        .scaleLinear()
+        .domain([0, d3.max(yearsLived, (d) => d.value) * 1.1])
+        .range([margin.left, width - margin.right]);
+
+      const y = d3
+        .scaleBand()
+        .domain(yearsLived.map((d) => d.name))
+        .range([margin.top, height - margin.bottom])
+        .padding(0.25);
+
+      svg /* horizontal axis with years lived */
+        .append("g")
+        .attr("transform", `translate(0, ${margin.top})`)
+        .call(
+          d3
+            .axisTop(x)
+            .ticks(5)
+            .tickFormat((d) => `${d} yr`),
+        )
+        .call((g) => g.select(".domain").remove());
+
+      svg /* vertical axis with location names */
+        .append("g")
+        .attr("transform", `translate(${margin.left}, 0)`)
+        .call(d3.axisLeft(y).tickSize(0))
+        .call((g) => g.selectAll(".tick text").style("font-size", "0.95rem"));
+
+      svg
+        .append("g")
+        .selectAll("rect")
+        .data(yearsLived)
+        .join("rect")
+        .attr("x", margin.left)
+        .attr("y", (d) => y(d.name))
+        .attr("width", (d) => x(d.value) - margin.left)
+        .attr("height", y.bandwidth())
+        .attr("fill", "steelblue")
+        .attr("rx", 3);
+
+      svg
+        .append("g")
+        .selectAll("text.value")
+        .data(yearsLived)
+        .join("text")
+        .attr("class", "value")
+        .attr("x", (d) => x(d.value) + 5)
+        .attr("y", (d) => y(d.name) + y.bandwidth() / 2)
+        .attr("dy", "0.35em")
+        .text((d) => `${d.value} yr`)
+        .style("font-size", "0.75rem")
+        .style("font-weight", 600)
+        .attr("fill", "#333");
+    </script>
   </body>
 </html>
