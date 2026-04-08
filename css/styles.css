@@ -9,13 +9,14 @@ body {
 header {
   /*  background-color: rgb(223, 239, 249);*/
   margin: 0px;
-  background-image: url("https://picsum.photos/id/37/1200/200?blur");
+  background-image: url("https://picsum.photos/id/37/1200/200?blur=2");
   background-size: cover;
   text-shadow: 1px 2px 6px lightgray;
 }
 
 main {
   padding-left: 50px;
+  padding-right: 50px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -130,11 +131,16 @@ nav {
 /* Mobile responsive: screens smaller than 768px */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 0px;
   }
 
   main {
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  header {
+    background-image: url("https://picsum.photos/id/37/768/212?blur=2");
   }
 
   h1 {
