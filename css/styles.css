@@ -62,8 +62,9 @@ article {
   border-radius: 10px;
   border: 1px solid;
   border-color: lightblue;
-  min-width: 250px;
+  min-width: 200px;
   width: 80%;
+  box-sizing: border-box;
   box-shadow: 5px 5px 10px rgb(184, 190, 194);
   margin: 20px 5px;
 }
@@ -124,4 +125,39 @@ nav {
   gap: 20px;
   justify-content: center;
   margin: 20px 5px;
+}
+
+/* Mobile responsive: screens smaller than 768px */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  main {
+    padding-left: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  article {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
