@@ -188,3 +188,50 @@ nav {
 .ani-links a:hover::after {
   transform: scaleX(1);
 }
+
+.highlight1 {
+  position: relative;
+  display: inline-block;
+  color: #0a2d5e;
+  padding: 0px 3px;
+  z-index: 1;
+}
+
+.highlight1::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: -3%;
+  width: 110%;
+  height: 120%;
+  background: linear-gradient(
+    to top,
+    rgba(125, 211, 252, 0.7) 0 30%,
+    rgba(125, 211, 252, 0.3) 40% 100%
+  );
+  border-radius: 5px;
+  transform: rotate(1deg);
+  z-index: -1;
+}
+
+.highlight2 {
+  display: inline-block;
+  color: #0a2d5e;
+  background: linear-gradient(
+    to top,
+    rgba(125, 211, 252, 0.5) 0 70%,
+    rgba(125, 211, 252, 0.2) 60% 100%
+  );
+  border-radius: 6px;
+  padding: 2px 6px;
+  transform: rotate(-2deg);
+}
+
+.highlight-yellow {
+  display: inline-block;
+  color: #0a2d5e;
+  background: rgba(255, 255, 0, 0.402);
+  border-radius: 6px;
+  padding: 2px 6px;
+  transform: rotate(1deg);
+}
