@@ -189,7 +189,7 @@ nav {
   transform: scaleX(1);
 }
 
-.highlight1 {
+.highlight-blue {
   position: relative;
   display: inline-block;
   color: #0a2d5e;
@@ -197,7 +197,7 @@ nav {
   z-index: 1;
 }
 
-.highlight1::before {
+.highlight-blue::before {
   content: "";
   position: absolute;
   top: -5%;
@@ -214,24 +214,73 @@ nav {
   z-index: -1;
 }
 
-.highlight2 {
+.highlight-lightblue {
+  position: relative;
   display: inline-block;
   color: #0a2d5e;
+  padding: 2px 6px;
+  z-index: 1;
+}
+
+.highlight-lightblue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(
     to top,
     rgba(125, 211, 252, 0.5) 0 70%,
     rgba(125, 211, 252, 0.2) 60% 100%
   );
   border-radius: 6px;
-  padding: 2px 6px;
   transform: rotate(-2deg);
+  z-index: -1;
 }
 
 .highlight-yellow {
+  position: relative;
   display: inline-block;
   color: #0a2d5e;
+  padding: 2px 6px;
+  z-index: 1;
+}
+
+.highlight-yellow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(255, 255, 0, 0.402);
   border-radius: 6px;
-  padding: 2px 6px;
   transform: rotate(1deg);
+  z-index: -1;
+}
+
+.highlight-purple {
+  position: relative;
+  display: inline-block;
+  color: #0a2d5e;
+  padding: 2px 6px;
+  z-index: 1;
+}
+
+.highlight-purple::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(128, 0, 128, 0.25) 0 25%,
+    rgba(128, 0, 128, 0.2) 25% 100%
+  );
+  border-radius: 6px;
+  transform: rotate(-1deg);
+  z-index: -1;
 }
